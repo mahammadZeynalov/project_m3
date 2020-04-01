@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto;
+}
+
+.application {
+    width: 336px;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+}
+
+.head {
+    height: 28px;
+    background-color: orange;
+}
+
+.app-name {
+    text-align: center;
+}
+
+.tasks-container {
+    text-align: center;
+}
+
+.task {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    background-color: grey;
+}
+
+.grab-place {
+    background-color: green;
+    width: 20px;
+    height: 20px;
+}
+
+.delete-button {
+    background-color: red;
+    width: 20px;
+    height: 20px;
+}
+.add-button-container {
+    position: relative;
+    width: 150px;
+    height: 42px;
+    background: #833AE0;
+    border-radius: 71px;
+    margin-top: 10px;
+    margin-left: 29%;
+    text-align: center;
+}
+
+.plus-sign {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: violet;
+    z-index: 1;
+}
+
+
+
