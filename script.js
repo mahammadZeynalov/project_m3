@@ -4,6 +4,11 @@ let firstTask = document.getElementById('first-task');
 let firstGrabPlace = document.querySelector('.grab-place');
 firstGrabPlace.draggable = true;
 addButton.addEventListener('click', insertRow);
+document.addEventListener('keyup', function (e) {
+    if(e.key == 'Enter') {
+        insertRow();
+    }
+});
 let sortAlph = document.querySelector('.up');
 sortAlph.addEventListener('click', sortAlphabetically);
 let sortReverse = document.querySelector('.down');
