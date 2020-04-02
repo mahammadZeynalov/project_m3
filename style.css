@@ -8,6 +8,7 @@ body {
 }
 
 .application {
+
   width: 336px;
   border-radius: 15px;
   border: 1px solid #E5E5E5;
@@ -15,6 +16,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  
 }
 
 .head {
@@ -64,7 +66,7 @@ body {
   background-color: grey;
   margin: 10px;
   border-radius: 10px;
-  border: 1px solid grey;
+  border: 1px solid #C4C4C4;
 }
 
 .grab-place {
@@ -107,8 +109,9 @@ body {
   height: 42px;
   background: #833ae0;
   border-radius: 71px;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-left: 29%;
+  margin-bottom: 20px;
   text-align: center;
 }
 
