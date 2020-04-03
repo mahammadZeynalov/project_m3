@@ -5,6 +5,9 @@
 body {
   font-family: Roboto;
   height: 100vh;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 
 .application {
@@ -12,11 +15,11 @@ body {
   width: 336px;
   border-radius: 15px;
   border: 1px solid #E5E5E5;
-  position: absolute;
+  margin: 0 auto;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  
+  transform: translate(-50%, -50%); */
 }
 
 .head {
