@@ -55,6 +55,7 @@ function insertRow() {
     let task = document.createElement('div');
     task.classList.add('task');
     task.classList.add('draggable');
+    task.draggable = true;
 
     let grabPlace = document.createElement('div');
     grabPlace.classList.add('grab-place');
