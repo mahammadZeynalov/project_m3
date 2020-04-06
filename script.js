@@ -1,8 +1,5 @@
 //#region Declaring elements need to work with and attaching listeners to them
 let addButton = document.querySelector('.add-button-container');
-let firstTask = document.getElementById('first-task');
-let firstGrabPlace = document.querySelector('.grab-place');
-firstGrabPlace.draggable = true;
 addButton.addEventListener('click', insertRow);
 document.addEventListener('keyup', function (e) {
     if(e.key == 'Enter') {
@@ -98,6 +95,7 @@ function removeRow(e) {
 
 // Drag and Drop realization. Thanks to Javid and his video from youtube xDDDD.
 function dragAndDrop() {
+    
     const grabPlaces = document.querySelectorAll('.grab-place');
     const containers = document.querySelectorAll('.tasks-container');
 
