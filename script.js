@@ -1,11 +1,15 @@
 //#region Declaring elements need to work with and attaching listeners to them
+const containers = document.querySelectorAll('.tasks-container');
 let addButton = document.querySelector('.add-button-container');
+
+insertRow(); // default row
 addButton.addEventListener('click', insertRow);
 document.addEventListener('keyup', function (e) {
     if(e.key == 'Enter') {
         insertRow();
     }
 });
+
 let sortAlph = document.querySelector('.up');
 sortAlph.addEventListener('click', sortAlphabetically);
 let sortReverse = document.querySelector('.down');
@@ -19,6 +23,7 @@ function sortAlphabetically() {
     tasks.forEach((task) => {
         arrayOfValues.push(task.value);
     })
+
     arrayOfValues.sort();
     for(let i = 0; i < tasks.length; i++) {
         tasks[i].value = arrayOfValues[i];
@@ -75,8 +80,18 @@ function insertRow() {
     task.appendChild(inputTask);
     task.appendChild(deleteButton);
 
+    //attaching listeners to grab places
+    grabPlace.addEventListener('dragstart', () => {
+        grabPlace.parentElement.classList.add('dragging');
+        grabPlace.nextElementSibling.classList.add('dragging');
+    })
+
+    grabPlace.addEventListener('dragend', () => {
+        grabPlace.parentElement.classList.remove('dragging');
+        grabPlace.nextElementSibling.classList.remove('dragging');
+    })
     readContainer();
-    dragAndDrop();
+    dragAndDrop(containers);
 }
 //#endregion
 
@@ -93,24 +108,8 @@ function removeRow(e) {
     e.target.parentElement.parentElement.remove();
 }
 
-// Drag and Drop realization. Thanks to Javid and his video from youtube xDDDD.
-function dragAndDrop() {
-    
-    const grabPlaces = document.querySelectorAll('.grab-place');
-    const containers = document.querySelectorAll('.tasks-container');
-
-    grabPlaces.forEach(grabPlace => {
-        //Adding listeners to all grab places so they change style when picked up.
-        grabPlace.addEventListener('dragstart', () => {
-            grabPlace.parentElement.classList.add('dragging');
-            grabPlace.nextElementSibling.classList.add('dragging');
-        })
-        //Removing styles from picked items when they dropped.
-        grabPlace.addEventListener('dragend', () => {
-            grabPlace.parentElement.classList.remove('dragging');
-            grabPlace.nextElementSibling.classList.remove('dragging');
-        })
-    })
+// Drag and Drop realization. Thanks to Javid and his video from youtube.
+function dragAndDrop(containers) {
 
     // This app actually can work even with more parent-containers. But in this app only one
     // is required, so I plan to simply this function soon.
@@ -139,7 +138,7 @@ function dragAndDrop() {
             if (offset < 0 && offset > closest.offset) {
                 return { offset: offset, element: child }
             } else {
-                return closest
+                return closest;
             }
         }, { offset: Number.NEGATIVE_INFINITY }).element
     }

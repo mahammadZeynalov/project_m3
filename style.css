@@ -38,6 +38,7 @@ body {
 
 .tasks-container {
   text-align: center;
+  list-style: none;
 }
 
 .sorting-button {

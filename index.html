@@ -11,9 +11,9 @@
 </head>
 <body>
     <div class='application'>
-        <div class="head"></div>
-        <h1 class="app-name">To-Do List</h1>
-        <div class='tasks-container'>
+        <header class="head"></header>
+        <main class='tasks-container'>
+            <h1 class="app-name">To-Do List</h1>
             <div class='sorting-button'>
                 <div class='up'>
                     <i class="fas fa-sort-amount-up-alt sort"></i>
@@ -22,24 +22,15 @@
                     <i class="fas fa-sort-amount-down-alt sort"></i>
                 </div>
             </div>
-            <div id="first-task" class="task draggable">
-                <div class="grab-place">
-                    <img class="grab" src="images/grab.svg" alt='grab'/>
-                </div>
-                <input class="input-task">
-                <div class="delete-button w3-xlarge">
-                    <i class="glyphicon glyphicon-remove delete"></i>
-                </div>
-            </div>
-        </div>
-        <div class="add-button-container">
+        </main>
+        <footer class="add-button-container">
             <div class='layer-plus'>
                 <div class='plus-sign'>+</div>
             </div>
             <div class='layer-add'>
                 <div class='add-button'>Добавить</div>
             </div>
-        </div>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>
