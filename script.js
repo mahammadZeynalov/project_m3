@@ -54,7 +54,7 @@ function sortInReverse() {
 function insertRow() {
     let tasksContainer = document.querySelector('.tasks-container');
 
-    let task = document.createElement('div');
+    let task = document.createElement('li');
     task.classList.add('task');
     task.classList.add('draggable');
     task.draggable = true;
