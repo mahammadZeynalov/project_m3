@@ -2,6 +2,7 @@
 const containers = document.querySelectorAll('.tasks-container');
 let addButton = document.querySelector('.add-button-container');
 
+dragAndDrop(containers);
 insertRow(); // default row
 addButton.addEventListener('click', insertRow);
 document.addEventListener('keyup', function (e) {
@@ -91,7 +92,6 @@ function insertRow() {
         grabPlace.nextElementSibling.classList.remove('dragging');
     })
     readContainer();
-    dragAndDrop(containers);
 }
 //#endregion
 
